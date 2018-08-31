@@ -22,16 +22,16 @@ public class LoginRestController {
 		return "Spring Boot is cool...";
 	}
 	@RequestMapping(value="/adminLogin")
-	public AdminBean validateAdmin(@RequestParam String email,@RequestParam String password) {		
+	public AdminBean validateAdmin( String email, String password) {		
 		return loginService.validateAdmin(email, password);
 	}
 	
 	@RequestMapping(value="/loginCustomer")
-	public CustomerBean validateCustomer(@RequestParam String email,@RequestParam String password){
+	public CustomerBean validateCustomer(String email, String password){
 		return loginService.validateCustomer(email, password);
 	}
 	@RequestMapping(value="/loginMerchant")
-	public MerchantBean validateMerhcant(@RequestParam String email,@RequestParam String password){
+	public MerchantBean validateMerhcant( String email, String password){
 		return loginService.validateMerchant(email, password);
 	}
 }
