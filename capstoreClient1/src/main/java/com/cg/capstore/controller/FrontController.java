@@ -12,17 +12,18 @@ import com.cg.capstore.bean.CustomerBean;
 public class FrontController {
 	
 	@RequestMapping("/ahome")
-	public String logIn(@RequestParam String email,@RequestParam String psw,ModelMap map) {
+	public String logIn(String email, String psw,ModelMap map) {
 		
 	RestTemplate restTemplate=new RestTemplate();
 	AdminBean admin = restTemplate.getForObject("http://localhost:9191/adminLogin?email="+email+"&password="+psw, AdminBean.class);
+	System.out.println(admin);
 	map.put("admin", admin);
 	return "adminhome";
 
 	}
 	
 	@RequestMapping("/log")
-	public String login(@RequestParam String email,@RequestParam String psw,ModelMap map) {
+	public String login( String email, String psw,ModelMap map) {
 		System.out.println(email+":"+psw);
 		RestTemplate restTemplate=new RestTemplate();
 		CustomerBean cust=restTemplate.getForObject("http://localhost:9191/loginCustomer?email="+email+"&password="+psw, CustomerBean.class);
