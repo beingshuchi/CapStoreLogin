@@ -10,7 +10,15 @@ public class JSPController {
 		return "login";
 	}
 	
+	@RequestMapping("/signup")
+	public String signup() {
+		return "signup";
+	}
 	
+	@RequestMapping("/changepassword")
+	public String changePassword() {
+		return "changepassword";
+	}
 	
 	
 }

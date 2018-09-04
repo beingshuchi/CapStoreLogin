@@ -10,7 +10,14 @@ public class MerchantBean {
 	private String merchantName;
 	private String phoneNo;
 	private String type;
-	
+	private List<ProductBean> products; 
+	public List<ProductBean> getProducts() {
+		return products;
+	}
+	public void setProducts(List<ProductBean> products) {
+		this.products = products;
+	}
+
 	private List<OrderBean> order;
 	private String password;
 	private List<CouponsBean> coupons;
@@ -57,18 +64,20 @@ public class MerchantBean {
 	public void setCoupons(List<CouponsBean> coupons) {
 		this.coupons = coupons;
 	}
-	public MerchantBean(String emailId, String merchantName, String phoneNo, String type, List<OrderBean> order,
-			String password, List<CouponsBean> coupons) {
+	
+	
+	public MerchantBean(String emailId, String merchantName, String phoneNo, String type, List<ProductBean> products,
+			List<OrderBean> order, String password, List<CouponsBean> coupons) {
 		super();
 		this.emailId = emailId;
 		this.merchantName = merchantName;
 		this.phoneNo = phoneNo;
 		this.type = type;
+		this.products = products;
 		this.order = order;
 		this.password = password;
 		this.coupons = coupons;
 	}
-	
 	public MerchantBean() {
 		super();
 	}

@@ -26,7 +26,9 @@ public class MerchantBean {
 	private String phoneNo;
 	@Column(name="type")
 	private String type;
-	
+	@OneToMany
+	@Column(name="product_id")
+	private List<ProductBean> product;
 	@OneToMany
 	@Column(name="order_id")
 	private List<OrderBean> order;
@@ -78,18 +80,25 @@ public class MerchantBean {
 	public void setCoupons(List<CouponsBean> coupons) {
 		this.coupons = coupons;
 	}
-	public MerchantBean(String emailId, String merchantName, String phoneNo, String type, List<OrderBean> order,
-			String password, List<CouponsBean> coupons) {
+
+	public MerchantBean(String emailId, String merchantName, String phoneNo, String type, List<ProductBean> product,
+			List<OrderBean> order, String password, List<CouponsBean> coupons) {
 		super();
 		this.emailId = emailId;
 		this.merchantName = merchantName;
 		this.phoneNo = phoneNo;
 		this.type = type;
+		this.product = product;
 		this.order = order;
 		this.password = password;
 		this.coupons = coupons;
 	}
-	
+	public List<ProductBean> getProduct() {
+		return product;
+	}
+	public void setProduct(List<ProductBean> product) {
+		this.product = product;
+	}
 	public MerchantBean() {
 		super();
 	}

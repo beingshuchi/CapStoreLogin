@@ -1,8 +1,11 @@
 package com.cg.capstore.beans;
 
+import java.util.Arrays;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -15,24 +18,44 @@ public class ImageBean {
 	@Id
 	@Column(name="image_id")
 	private String imageId;
-	@Column(name="image")
-	private Byte[] image;
+	
+	@Lob
+	@Column(name="image_data")
+	private byte[] imageData;
+	
 	@Column(name="image_name")
 	private String imageName;
+	
 	@Column(name="image_type")
 	private String imageType;
 	
+	@Column(name="image_path")
+	private String imagePath;
+	
+	@Override
+	public String toString() {
+		return "ImageBean [imageId=" + imageId + ", imageData=" + Arrays.toString(imageData) + ", imageName="
+				+ imageName + ", imageType=" + imageType + ", imagePath=" + imagePath + "]";
+	}
+	public String getImagePath() {
+		return imagePath;
+	}
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
+	}
 	public String getImageId() {
 		return imageId;
 	}
 	public void setImageId(String imageId) {
 		this.imageId = imageId;
 	}
-	public Byte[] getImage() {
-		return image;
+	
+	
+	public byte[] getImageData() {
+		return imageData;
 	}
-	public void setImage(Byte[] image) {
-		this.image = image;
+	public void setImageData(byte[] imageData) {
+		this.imageData = imageData;
 	}
 	public String getImageName() {
 		return imageName;
@@ -46,15 +69,18 @@ public class ImageBean {
 	public void setImageType(String imageType) {
 		this.imageType = imageType;
 	}
-	public ImageBean(String imageId, Byte[] image, String imageName, String imageType) {
+	
+	public ImageBean(String imageId, byte[] imageData, String imageName, String imageType, String imagePath) {
 		super();
 		this.imageId = imageId;
-		this.image = image;
+		this.imageData = imageData;
 		this.imageName = imageName;
 		this.imageType = imageType;
+		this.imagePath = imagePath;
 	}
 	public ImageBean() {
 		super();
 	}
+	
 	
 }

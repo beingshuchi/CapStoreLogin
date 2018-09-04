@@ -10,7 +10,6 @@ public class ProductBean {
 	private String productId;
 	private String productName;
 	private Double price;
-	private List<MerchantBean> merchant;
 	private Double quantity;
 	private String category;
 	private PromosBean promoCode;
@@ -36,12 +35,7 @@ public class ProductBean {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
-	public List<MerchantBean> getMerchant() {
-		return merchant;
-	}
-	public void setMerchant(List<MerchantBean> merchant) {
-		this.merchant = merchant;
-	}
+	
 	public Double getQuantity() {
 		return quantity;
 	}
@@ -78,14 +72,14 @@ public class ProductBean {
 	public void setFeedbackProduct(List<FeedbackProductBean> feedbackProduct) {
 		this.feedbackProduct = feedbackProduct;
 	}
-	public ProductBean(String productId, String productName, Double price, List<MerchantBean> merchant, Double quantity,
+	public ProductBean(String productId, String productName, Double price, Double quantity,
 			String category, PromosBean promoCode, DiscountBean discount, List<ImageBean> imageId,
 			List<FeedbackProductBean> feedbackProduct) {
 		super();
 		this.productId = productId;
 		this.productName = productName;
 		this.price = price;
-		this.merchant = merchant;
+		
 		this.quantity = quantity;
 		this.category = category;
 		this.promoCode = promoCode;

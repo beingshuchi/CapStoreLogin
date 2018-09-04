@@ -5,6 +5,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -35,7 +36,7 @@ public class CustomerBean {
 	//@Column(name="wishlist_id")
 	private WishlistBean wishlist;
 
-	@OneToMany
+	@ManyToMany
 	@Column(name="cart")
 	private List<ProductBean> cart;
 

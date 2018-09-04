@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,11 +8,11 @@
 <title>Login page</title>
 <script type="text/javascript">
 function validate(){
-var email=document.loginForm.email.value;
-var password=document.loginForm.pass.value;
+
+var email=document.myform.email.value;
+var password=document.myform.pass.value;
 if(email==""){
 alert("Email cannot be left empty!");
-document.loginForm.email.focus();
 return false;
 }
 /* if(!(email=="/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/")){
@@ -21,7 +22,6 @@ return false;
 } */
 if(password==""){
 alert("Password cannot be left empty!");
-document.loginForm.pass.focus();
 return false;
 }
 return true;
@@ -29,7 +29,7 @@ return true;
 </script>
 </head>
 <body>
-<form action="/admin" name="myform">
+<form action="/admin-home" name="myform" onsubmit="return validate();">
 <table align="center">
 <tr><td colspan="2" style="color:red"></td></tr>
 <tr>
@@ -42,7 +42,9 @@ return true;
 </tr>
 <tr>
 <td></td>
-<td><input type="submit" value="Login" name="submit"></td>
+<td><input type="submit" value="Login" name="submit" ></td>
+</tr><tr><td></td>
+<td><a href="#"><span>Forgot?</span></a></td>
 </tr>
 </table>
 </form>

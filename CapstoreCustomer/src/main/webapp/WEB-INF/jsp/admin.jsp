@@ -7,6 +7,37 @@
 <title>Admin</title>
 </head>
 <body>
-Hola! admin here
+<form>
+<table>
+		<!-- <input type="text" placeholder="Search.."></br> -->
+		<tr><td>
+		<a href="merchantlist" name="Get Merchant Details"> Get Merchant Details</a>
+		</td></tr>
+		<tr><td>
+		<a href="customerlist" name="Get Customer Details"> Get Customer Details</a></td></tr>
+		<tr><td>
+			<a href="#" name="Add category">Add category</a></td></tr>
+			<tr><td>
+			<a href="#" name="Remove category"> Remove category</a></td></tr>
+			<tr><td>
+			<a href="#" name="Add Merchant"> Add Merchant</a></td></tr>
+			<tr><td>
+			<a href="#" name="Remove Merchant"> Remove Merchant</a></td></tr>
+			<tr><td>
+		    <a href="#" name="Generate Bussiness Analysis"> Generate Bussiness Analysis</a></td></tr>
+		    <tr><td> 
+		    <a href="#" name="CapStoreRevenue"> CapStoreRevenue</a></td></tr>
+		    <tr><td>
+		    <a href="#" name="Order Status"> Order Status</a></td></tr>
+		    <tr><td>
+		     <a href="#" name="Send Promos"> Send Promos</a></td></tr>
+		<tr><td>
+		<a href="/changepasswordadmin" name="changepassword"> Change Password</a></td></tr>
+		<tr><td> 
+		    <input type="submit" value="Generate Coupouns" /></td></tr>
+		    <tr><td>
+			<a href="adminlogin" name="Logout">Logout</a></td></tr>
+			</table>
+	</form>
 </body>
 </html>

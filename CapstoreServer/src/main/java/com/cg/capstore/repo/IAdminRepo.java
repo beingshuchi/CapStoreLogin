@@ -12,4 +12,6 @@ public interface IAdminRepo extends JpaRepository<AdminBean, String>{
 	
 	@Query("SELECT admin FROM AdminBean admin WHERE admin.emailId= :email")
 	AdminBean findAdmin(@Param(value="email") String email);
+	@Query("SELECT admin FROM AdminBean admin WHERE admin.password= :pass")
+	AdminBean findPassword(@Param(value="pass") String password);
 }

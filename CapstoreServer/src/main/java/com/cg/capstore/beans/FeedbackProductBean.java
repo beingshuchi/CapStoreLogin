@@ -16,16 +16,16 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class FeedbackProductBean {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="feedback_id")
-	private Integer feedbackId;
+	private String feedbackId;
 	@Column(name="feedback_title")
 	private String feedbackTitle;
 	@Column(name="date")
 	private Date date;
 	@Column(name="rating")
 	private Integer rating;
-	
+	@Column(name="feedback_description")
+	private String feedbackDescription;
 	
 	public Integer getRating() {
 		return rating;
@@ -33,10 +33,10 @@ public class FeedbackProductBean {
 	public void setRating(Integer rating) {
 		this.rating = rating;
 	}
-	public Integer getFeedbackId() {
+	public String getFeedbackId() {
 		return feedbackId;
 	}
-	public void setFeedbackId(Integer feedbackId) {
+	public void setFeedbackId(String feedbackId) {
 		this.feedbackId = feedbackId;
 	}
 	public String getFeedbackTitle() {
@@ -51,16 +51,24 @@ public class FeedbackProductBean {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	public FeedbackProductBean(Integer feedbackId, String feedbackTitle, Date date, Integer rating) {
+	
+	public FeedbackProductBean() {
+		super();
+	}
+	public String getFeedbackDescription() {
+		return feedbackDescription;
+	}
+	public void setFeedbackDescription(String feedbackDescription) {
+		this.feedbackDescription = feedbackDescription;
+	}
+	public FeedbackProductBean(String feedbackId, String feedbackTitle, Date date, Integer rating,
+			String feedbackDescription) {
 		super();
 		this.feedbackId = feedbackId;
 		this.feedbackTitle = feedbackTitle;
 		this.date = date;
 		this.rating = rating;
-	}
-	
-	public FeedbackProductBean() {
-		super();
+		this.feedbackDescription = feedbackDescription;
 	}
 	
 

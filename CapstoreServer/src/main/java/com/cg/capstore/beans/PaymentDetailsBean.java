@@ -5,6 +5,8 @@ import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -25,6 +27,10 @@ public class PaymentDetailsBean {
 	
 	@Column(name="revenue")
 	private Double capStoreRevenueAmount;
+
+	@OneToOne
+	@JoinColumn(name="order_Id")
+	private OrderBean order;
 
 	public String getTransactionId() {
 		return transactionId;
@@ -58,15 +64,26 @@ public class PaymentDetailsBean {
 		this.capStoreRevenueAmount = capStoreRevenueAmount;
 	}
 
+	
+	
 	public PaymentDetailsBean(String transactionId, Date transactionDate, Double paymentAmount,
-			Double capStoreRevenueAmount) {
+			Double capStoreRevenueAmount, OrderBean order) {
 		super();
 		this.transactionId = transactionId;
 		this.transactionDate = transactionDate;
 		this.paymentAmount = paymentAmount;
 		this.capStoreRevenueAmount = capStoreRevenueAmount;
+		this.order = order;
 	}
-	
+
+	public OrderBean getOrder() {
+		return order;
+	}
+
+	public void setOrder(OrderBean order) {
+		this.order = order;
+	}
+
 	public PaymentDetailsBean() {
 		super();
 	}

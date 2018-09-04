@@ -14,13 +14,13 @@ public class AdminBean {
 	
 	@Override
 	public String toString() {
-		return "AdminBean [emailId=" + emailId + ", Password=" + Password + "]";
+		return "AdminBean [emailId=" + emailId + ", Password=" + password + "]";
 	}
 	@Id
 	@Column(name="admin_id")
 	private String emailId;
 	@Column(name="password")
-	private String Password;
+	private String password;
 
 	public String getEmailId() {
 		return emailId;
@@ -29,15 +29,15 @@ public class AdminBean {
 		this.emailId = emailId;
 	}
 	public String getPassword() {
-		return Password;
+		return password;
 	}
 	public void setPassword(String password) {
-		this.Password = password;
+		this.password = password;
 	}
 	public AdminBean(String emailId, String password) {
 		super();
 		this.emailId = emailId;
-		this.Password = password;
+		this.password = password;
 	}
 	public AdminBean() {
 		super();

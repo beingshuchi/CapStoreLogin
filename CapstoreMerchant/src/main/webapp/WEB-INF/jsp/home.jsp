@@ -8,5 +8,6 @@
 </head>
 <body>
 Hello merhcant
+<a href="/changepassword">change password</a>
 </body>
 </html>

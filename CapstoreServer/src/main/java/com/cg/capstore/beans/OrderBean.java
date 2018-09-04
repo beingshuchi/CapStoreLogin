@@ -35,7 +35,16 @@ public class OrderBean {
 	@Column(name="delivery_date")
 	private Date deliveryDate;  //sql.date
 	@Column(name="min_billing_amount")
-	private Integer minBillingAmount;
+	private Double minBillingAmount;
+	@Column(name="Total")
+	private Double totalPrice;
+	
+	public double getTotalPrice() {
+		return totalPrice;
+	}
+	public void setTotalPrice(double totalPrice) {
+		this.totalPrice = totalPrice;
+	}
 	public String getOrderId() {
 		return orderId;
 	}
@@ -78,14 +87,14 @@ public class OrderBean {
 	public void setDeliveryDate(Date deliveryDate) {
 		this.deliveryDate = deliveryDate;
 	}
-	public Integer getMinBillingAmount() {
+	public Double getMinBillingAmount() {
 		return minBillingAmount;
 	}
-	public void setMinBillingAmount(Integer minBillingAmount) {
+	public void setMinBillingAmount(Double minBillingAmount) {
 		this.minBillingAmount = minBillingAmount;
 	}
 	public OrderBean(String orderId, String orderStatus, int quantity, List<ProductBean> product, String paymentMethod,
-			Date dateOfOrder, Date deliveryDate, Integer minBillingAmount) {
+			Date dateOfOrder, Date deliveryDate, Double minBillingAmount) {
 		super();
 		this.orderId = orderId;
 		this.orderStatus = orderStatus;

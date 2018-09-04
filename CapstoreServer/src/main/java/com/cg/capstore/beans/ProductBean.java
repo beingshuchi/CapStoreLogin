@@ -6,7 +6,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -25,11 +24,8 @@ public class ProductBean {
 	private String productName;
 	@Column(name="price")
 	private Double price;
-	@ManyToMany
-	@JoinColumn(name="merchant_id")
-	private List<MerchantBean> merchant;
 	@Column(name="quantity")
-	private Double quantity;
+	private Integer quantity;
 	@Column(name="category")
 	private String category;
 	@OneToOne
@@ -39,11 +35,13 @@ public class ProductBean {
 	@JoinColumn(name="discount_id")
 	private DiscountBean discount;
 	@OneToMany
-	@JoinColumn(name="image_id")
+	@Column(name="image_id")
 	private List<ImageBean> imageId;
 	@OneToMany
-	@JoinColumn(name="feedback_id")
+	@Column(name="feedback_id")
 	private List<FeedbackProductBean> feedbackProduct;
+	@Column
+	private Integer count; 
 	
 	public String getProductId() {
 		return productId;
@@ -63,16 +61,11 @@ public class ProductBean {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
-	public List<MerchantBean> getMerchant() {
-		return merchant;
-	}
-	public void setMerchant(List<MerchantBean> merchant) {
-		this.merchant = merchant;
-	}
-	public Double getQuantity() {
+
+	public Integer getQuantity() {
 		return quantity;
 	}
-	public void setQuantity(Double quantity) {
+	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
 	}
 	public String getCategory() {
@@ -105,22 +98,29 @@ public class ProductBean {
 	public void setFeedbackProduct(List<FeedbackProductBean> feedbackProduct) {
 		this.feedbackProduct = feedbackProduct;
 	}
-	public ProductBean(String productId, String productName, Double price, List<MerchantBean> merchant, Double quantity,
-			String category, PromosBean promoCode, DiscountBean discount, List<ImageBean> imageId,
-			List<FeedbackProductBean> feedbackProduct) {
+	
+	
+	public ProductBean(String productId, String productName, Double price, Integer quantity, String category,
+			PromosBean promoCode, DiscountBean discount, List<ImageBean> imageId,
+			List<FeedbackProductBean> feedbackProduct, Integer count) {
 		super();
 		this.productId = productId;
 		this.productName = productName;
 		this.price = price;
-		this.merchant = merchant;
 		this.quantity = quantity;
 		this.category = category;
 		this.promoCode = promoCode;
 		this.discount = discount;
 		this.imageId = imageId;
 		this.feedbackProduct = feedbackProduct;
+		this.count = count;
 	}
-	
+	public Integer getCount() {
+		return count;
+	}
+	public void setCount(Integer count) {
+		this.count = count;
+	}
 	public ProductBean() {
 		super();
 	}

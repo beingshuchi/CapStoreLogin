@@ -6,8 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Home</title>
 </head>
-<body>
-Hello customer
+<body><h1>Hello</h1>
+${customer.customerName}
 <a href="/customerprofile">My Profile</a>
 </body>
 </html>

@@ -14,6 +14,14 @@ public class OrderBean {
 	private Date dateOfOrder; //sql.date
 	private Date deliveryDate;  //sql.date
 	private Integer minBillingAmount;
+private double totalPrice;
+	
+	public double getTotalPrice() {
+		return totalPrice;
+	}
+	public void setTotalPrice(double totalPrice) {
+		this.totalPrice = totalPrice;
+	}
 	public String getOrderId() {
 		return orderId;
 	}
