@@ -192,7 +192,7 @@ public class AdminController {
 		CustomerBean customeBean = service.sentInvitationToCustomer(email);
 		String name = customeBean.getCustomerName();
 	
-		sendInvitationToCustomer(email);
+		//sendInvitationToCustomer(email);
 		if (customeBean.getEmail() != null) {
 			return name + ",invitation has been sent to" + email;
 		} else {
@@ -216,7 +216,7 @@ public class AdminController {
 		MerchantBean merchantBean = service.sendInvitationToMerchant(email);
 		String name = merchantBean.getMerchantName();
 		
-		sendNewInvitationToMerchant(email);
+		//sendNewInvitationToMerchant(email);
 		if (merchantBean.getEmailId() != null) {
 			return name + ",invitation has been sent to" + email;
 		} else {
@@ -241,7 +241,7 @@ public class AdminController {
 		System.err.println("In Back Controller--- Name:" + name);
 		String customerEmail = service.sendSchemeToCustomer(name);
 		System.err.println("Out Back Controller--- Name:" + customerEmail);
-		sendNewSchemeToCustomer(name);
+		//sendNewSchemeToCustomer(name);
 		if (customerEmail != null) {
 			return "Scheme details have been sent to " + customerEmail;
 		} else {
@@ -264,7 +264,7 @@ public class AdminController {
 		System.out.println("merchant");
 		System.err.println("In Back Controller--- Name:" + name);
 		String merchantEmail = service.sendSchemeToMerchant(name);
-		sendNewSchemeToMerchant(name);
+	//	sendNewSchemeToMerchant(name);
 		if (merchantEmail != null) {
 			return "Scheme details have been sent to " + merchantEmail;
 		} else {
@@ -287,7 +287,7 @@ public class AdminController {
 		
 		String customerEmail = service.sendPromoToCustomer(name);
 		System.err.println("Out Back Controller--- Name:" + customerEmail);
-		sendNewPromoToCustomer(name);
+		//sendNewPromoToCustomer(name);
 		if (customerEmail != null) {
 			return "Promo details have been sent to " + customerEmail;
 		} else {
@@ -311,7 +311,7 @@ public class AdminController {
 		System.err.println("merchant scheme back");
 		System.err.println("In Back Controller--- Name:" + name);
 		String merchantEmail = service.sendPromoToMerchant(name);
-		sendNewPromoToMerchant(name);
+		//sendNewPromoToMerchant(name);
 		System.err.println("Out Back Controller--- Name:" + merchantEmail);
 		if (merchantEmail != null) {
 
@@ -336,7 +336,7 @@ public class AdminController {
 		System.err.println("IN BACK CONTROLLER...");
 		System.err.println("email of customer:"+Email);
 		MerchantBean merchantBean= service.sendInvitationToMerchant(Email);
-		sendExistingInvitationToMerchant(Email);
+		//sendExistingInvitationToMerchant(Email);
 		//String name=merchantBean.getMerchantName();
 		//System.err.println("Back--- Name:"+name);
 		return "Invitation has been sent successfully to "+Email;

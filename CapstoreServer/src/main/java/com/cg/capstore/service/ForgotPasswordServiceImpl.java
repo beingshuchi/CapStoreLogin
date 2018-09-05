@@ -1,6 +1,7 @@
 package com.cg.capstore.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.cg.capstore.beans.AdminBean;
 import com.cg.capstore.beans.CustomerBean;
@@ -9,7 +10,7 @@ import com.cg.capstore.exception.UserNotFoundException;
 import com.cg.capstore.repo.IAdminRepo;
 import com.cg.capstore.repo.ICustomerRepo;
 import com.cg.capstore.repo.IMerchantRepo;
-
+@Service
 public class ForgotPasswordServiceImpl implements IForgotPasswordService{
 	
 	@Autowired
