@@ -46,7 +46,7 @@ return true;
 <td><a href="#"><span>Forgot?</span></a></td>
 </tr>
 <tr><td></td><td>
-<a name="signup" href="#"><span>New Capstore User? SignUp</span></a>
+<a name="signup" href="/signup"><span>New Capstore User? SignUp</span></a>
 </td>
 </tr>
 </table>

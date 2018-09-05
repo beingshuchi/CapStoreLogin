@@ -14,7 +14,7 @@
 		var email = document.myform.email.value;
 		var password = document.myform.password.value;
 		var mob = /^[0-9]{10}$/;
-		var name = /^[A-Za-z]{3,}$/;
+		var name = /^[A-Za-z/s]{3,}$/;
 		var em = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/;
 		var pass = /[A-Z]{1,}[a-z0-9._%+-@a-z0-9.-a-z]{8,}$/;
 		if (merchantname == "") {

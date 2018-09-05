@@ -9,5 +9,6 @@
 <body>
 Hello merhcant
 <a href="/changepassword">change password</a>
+<a href="/login">Logout</a>
 </body>
 </html>
