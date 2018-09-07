@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+<context:annotation-config></context:annotation-config>
+<context:component-scan base-package="com.cg"></context:component-scan>
+
+<bean id="game1" class="com.cg.bean.Games" name="game1" >
+<property name="name" value="Swimming"></property>
+</bean>
+
+<bean id="game2" class="com.cg.bean.Games" name="game2" >
+<property name="name" value="Chess"></property>
+</bean>
+
+<bean id="game3" class="com.cg.bean.Games" name="game3" >
+<property name="name" value="Diving"></property>
+</bean>
+
+<bean id="game4" class="com.cg.bean.Games" name="game4" >
+<property name="name" value="Soft Ball"></property>
+</bean>
+
+<bean id="game5" class="com.cg.bean.Games" name="game5" >
+<property name="name" value="Volley Ball"></property>
+</bean>
+
+<bean id="game6" class="com.cg.bean.Games" name="game6" >
+<property name="name" value="Golf"></property>
+</bean>
+
+<bean id="day6" class="com.cg.bean.Day" name="day6">
+<property name="name" value="Day 6"></property>
+<property  name="games" ref="list1">
+</property>
+</bean>
+
+<util:list id="list1" value-type="com.cg.bean.Games">
+<ref bean="game4" />
+<ref bean="game2" />
+<ref bean="game6" />
+</util:list>
+
+<bean id="day7" class="com.cg.bean.Day" name="day7">
+<property name="name" value="Day 7"></property>
+<property  name="games" ref="list2">
+
+</property>
+</bean>
+
+<util:list id="list2" value-type="com.cg.bean.Games">
+<ref bean="game1" />
+<ref bean="game3" />
+<ref bean="game6" />
+</util:list>
+
+<bean id="day8" class="com.cg.bean.Day" name="day8">
+<property name="name" value="Day 8"></property>
+<property  name="games" >
+<list value-type="com.cg.bean.Games">
+<ref bean="game5" />
+<ref bean="game4" />
+<ref bean="game3" />
+</list>
+</property>
+</bean>
+
+<util:map id="maps" key-type="java.lang.String" value-type="com.cg.bean.Day" map-class="java.util.HashMap">
+<entry key="Day 6" value-ref="day6"></entry>
+<entry key="Day 7" value-ref="day7"></entry>
+<entry key="Day 8" value-ref="day8"></entry>
+</util:map>
+
+</beans>
